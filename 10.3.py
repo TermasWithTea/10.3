@@ -13,8 +13,8 @@ class Bank:
             with self.lock:
                 self.balance += popol
                 print(f'Пополнение: {popol}. Баланс:{self.balance}')
-                if self.balance >= 500 and self.lock.locked():
-                    self.lock.release()
+            if self.balance >= 500 and self.lock.locked():
+                self.lock.release()
             sleep(0.001)
 
     def take(self):
